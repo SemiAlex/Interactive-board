@@ -5,11 +5,12 @@ import Header from './components/Header';
 import Columns from './components/Columns';
 
 function App() {
-  const [columns, setColumns] = useState([])
+  const [columns, setColumns] = useState([]);
+  const [tasks, setTasks] = useState([]);
 
   return (
     <div className='light-grey background-height'>
-      <ThemeContext.Provider value={{ columns, setColumns }}>
+      <ThemeContext.Provider value={{ columns, setColumns, tasks, setTasks }}>
         <Header />
         <Columns />
       </ThemeContext.Provider>

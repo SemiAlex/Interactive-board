@@ -1,20 +1,25 @@
 .purple {
-  background: rgba(82, 72, 156, 1);
+  background: rgba(55, 0, 117, 1);
   color: white;
 }
 
-.red {
-  background: rgba(221, 68, 85, 1);
+.light-purple {
+  background: rgba(98, 0, 151, 1);
   color: white;
+}
+
+.yellow {
+  background: rgba(253, 186, 49, 1);
+  color: rgb(0, 0, 0);
 }
 
 .grey {
-  background: rgba(217, 217, 217, 1);
+  background: rgb(228, 228, 228);
   color: black;
 }
 
 .light-grey {
-  background: rgba(235, 235, 235, 1);
+  background: rgb(247, 247, 247);
 }
 
 .column-width {
@@ -29,8 +34,7 @@
   height: 100vh;
 }
 
-.borderless {
-  border: none;
+.transparent {
   background: none;
 }
 

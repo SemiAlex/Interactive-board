@@ -6,6 +6,6 @@ function Header() {
             <p className='title-text'>KanBoard</p>
         </div>
     </div>
-}
+};
 
 export default Header
