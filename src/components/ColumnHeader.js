@@ -1,4 +1,4 @@
-import { useState, useContext, useRef } from "react"
+import { useState, useContext, useRef, useEffect } from "react"
 import ThemeContext from "../context/ThemeContext"
 
 function ColumnHeader({ column }) {
@@ -6,8 +6,14 @@ function ColumnHeader({ column }) {
     const [edit, setEdit] = useState(false);
     const [title, setTitle] = useState('');
 
+    useEffect(()=> {
+        setTitle(column.header)
+    }, [])
+
     const getTitle = val => {
-        setTitle(val.target.value)
+        const previousHeader = column.header;
+        const newHeader = val.target.value;
+        setTitle(newHeader.length ? newHeader : previousHeader)
     };
 
     const ref = useRef(null);
@@ -19,7 +25,7 @@ function ColumnHeader({ column }) {
     }
 
     return edit ?
-        <input type="text" maxlength="50" ref={ref} defaultValue={`${column.header}`} onChange={getTitle} onBlur={changeTitle} onEnter={changeTitle} /> :
+        <input className="transparent border-0 w-100" type="text" maxlength="50" ref={ref} defaultValue={`${column.header}`} onChange={getTitle} onBlur={changeTitle} onEnter={changeTitle} /> :
         <span className="text-wrap text-break" onClick={() => setEdit(true)}>{column.header}</span>
 }
 
