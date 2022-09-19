@@ -7,6 +7,10 @@ import TaskHeader from "./TaskHeader";
 function Tasks({ column }) {
     const { tasks, setTasks, columns } = useContext(ThemeContext);
 
+//useEffect(() => {
+//    setTasks([{id: 0, colNum: 0, header: 'Example', description: `123456789`, headerEdit: false, descriptionEdit: false}])
+//}, [])
+
     return <>
         {tasks.map(task => task.colNum === column.id ? <div className="mt-2">
             <div className="d-flex justify-content-between align-items-center light-purple p-1 text-wrap text-break rounded-top border border-bottom-0 border-secondary">
