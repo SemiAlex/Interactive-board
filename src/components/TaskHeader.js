@@ -1,10 +1,14 @@
-import { useState, useContext   , useRef } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 import ThemeContext from "../context/ThemeContext";
 
-function TaskTitle({ task }) {
+function TaskHeader({ task }) {
     const { tasks, setTasks } = useContext(ThemeContext);
     const [edit, setEdit] = useState(false);
     const [title, setTitle] = useState('');
+
+    useEffect(()=> {
+        setTitle(task.header)
+    }, [])
 
     const getTitle = val => {
         const previousHeader = task.header;
@@ -25,4 +29,4 @@ function TaskTitle({ task }) {
         <span className="text-wrap text-break" onClick={() => setEdit(true)}>{task.header}</span>
 }
 
-export default TaskTitle
+export default TaskHeader

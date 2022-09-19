@@ -9,7 +9,7 @@ function RemoveColumnButton({ column }) {
     };
 
     return <div>
-        <button className='border-0 transparent grey h6' onClick={() => removeColumn(column.id)}>remove</button>
+        <button className='border-0 transparent grey h6' onClick={() => removeColumn(column.id)}>X</button>
     </div>
 };
 
