@@ -1,7 +1,18 @@
-function TaskHeader({ task }) {
+import { useContext, useRef } from "react";
+import ThemeContext from "../context/ThemeContext";
 
-    return <input className="transparent border-0 w-100 text-white font-weight-bold" style={{fontWeight: "bold"}} type="text" maxlength="50"
-        defaultValue={`${task.header}`} />
+function TaskHeader({ task }) {
+    const { tasks, setTasks } = useContext(ThemeContext);
+
+    const inputRef = useRef(null);
+
+    const saveData = id => {
+        setTasks(tasks.map(task => ({...task, header: task.id === id ? inputRef.current.value : task.header})));
+    }
+
+    return <input className="transparent border-0 w-100 text-white font-weight-bold text-wrap text-break" style={{fontWeight: "bold"}} type="text" maxLength="50" ref={inputRef}
+        value={`${task.header}`}
+        onChange={() => saveData(task.id)} />
 }
 
 export default TaskHeader

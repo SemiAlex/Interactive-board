@@ -12,6 +12,7 @@ function App() {
     <div className='light-grey background-height'>
       <ThemeContext.Provider value={{ columns, setColumns, tasks, setTasks }}>
         <Header />
+        {JSON.stringify(columns)}
         <Columns />
       </ThemeContext.Provider>
     </div>

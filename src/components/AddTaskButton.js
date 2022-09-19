@@ -24,7 +24,7 @@ function AddTaskButton({column}) {
     };
 
     const addTask = () => {
-        setTasks([...tasks, {id: tasks.length, colNum: column.id, header: `${header}`, description: `${description}`}]);
+        setTasks([...tasks, {id: tasks.length, colNum: column.id, header: header.length ? `${header}` : 'New Task', description: `${description}`}]);
         setActive(!isActive);
         setHeader('');
         setDescription('');
@@ -36,7 +36,7 @@ function AddTaskButton({column}) {
             <form className='mt-2 text-center' onSubmit={handleSubmit}>
                 <input type="text" className='border-0 border-bottom rounded-top' placeholder="Provide title" onChange={getHeader} />
                 <input type="text" className='border-0 border-top rounded-bottom' placeholder="Description..." onChange={getDescription} />
-                <input type="submit" className='border-0 light-purple mt-2 rounded' onClick={header.length ? addTask : ''}>
+                <input type="submit" className='border-0 light-purple mt-2 rounded' onClick={() => addTask()}>
                 </input>
             </form>
         </div>
