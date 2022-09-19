@@ -8,9 +8,9 @@ function Columns() {
 
     useEffect(() => {
         setColumns([
-            { id: 0, header: 'To Do', edit: false },
-            { id: 1, header: 'In Process', edit: false },
-            { id: 2, header: 'Done', edit: false }
+            { id: 0, header: 'To Do'},
+            { id: 1, header: 'In Process'},
+            { id: 2, header: 'Done'}
         ])
     }, []);
 

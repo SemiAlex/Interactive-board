@@ -24,7 +24,7 @@ function AddTaskButton({column}) {
     };
 
     const addTask = () => {
-        setTasks([...tasks, {id: tasks.length, colNum: column.id, header: `${header}`, description: `${description}`, headerEdit: false, descriptionEdit: false}]);
+        setTasks([...tasks, {id: tasks.length, colNum: column.id, header: `${header}`, description: `${description}`}]);
         setActive(!isActive);
         setHeader('');
         setDescription('');
