@@ -10,7 +10,7 @@ function TaskDescription({ task }) {
         setTasks(tasks.map(task => ({...task, description: task.id === id ? inputRef.current.value : task.description})));
     }
 
-    return <input className="transparent border-0 w-100 text-break text-wrap" type="text" maxLength="50" ref={inputRef}
+    return <input className="transparent border-0 w-75 text-break text-wrap" type="text" maxLength="50" ref={inputRef}
          value={`${task.description}`}
          onChange={() => saveData(task.id)} />
 }
