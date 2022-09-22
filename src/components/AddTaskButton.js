@@ -1,11 +1,11 @@
 import { useContext, useState } from 'react';
 import ThemeContext from '../context/ThemeContext';
 
-function AddTaskButton({column}) {
+function AddTaskButton({ column }) {
     const [isActive, setActive] = useState(false);
     const [header, setHeader] = useState('');
     const [description, setDescription] = useState('');
-    const { tasks, setTasks } = useContext(ThemeContext);
+    const { columns, setColumns, maxId, setMaxId } = useContext(ThemeContext);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -23,8 +23,14 @@ function AddTaskButton({column}) {
         setDescription(val.target.value);
     };
 
-    const addTask = () => {
-        setTasks([...tasks, {id: tasks.length, colNum: column.id, header: header.length ? `${header}` : 'New Task', description: `${description}`}]);
+    const addTask = id => {
+        setColumns(columns.map(column => column.id === id ?
+            ({
+                ...column, tasks:
+                    [...column.tasks, { id: maxId, header: header.length ? `${header}` : 'New Task', description: `${description}` }]
+            }) :
+            ({ ...column })));
+        setMaxId(maxId + 1)
         setActive(!isActive);
         setHeader('');
         setDescription('');
@@ -37,7 +43,7 @@ function AddTaskButton({column}) {
                 <input type="text" className='border-0 border-bottom rounded-top w-100' placeholder="Provide title" onChange={getHeader} />
                 <input type="text" className='border-0 border-top rounded-bottom w-100' placeholder="Description..." onChange={getDescription} />
                 <div className='d-flex justify-content-evenly align-items-center'>
-                    <input type="submit" className='border-0 light-purple mt-2 rounded' onClick={() => addTask()} />
+                    <input type="submit" className='border-0 light-purple mt-2 rounded' onClick={() => addTask(column.id)} />
                     <button className="border-0 transparent h6" onClick={() => handleClick()}>X</button> 
                 </div>
             </form>
@@ -46,3 +52,5 @@ function AddTaskButton({column}) {
 
 
 export default AddTaskButton
+
+

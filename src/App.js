@@ -6,12 +6,12 @@ import Columns from './components/Columns';
 
 function App() {
   const [columns, setColumns] = useState([]);
-  const [tasks, setTasks] = useState([]);
-  const [tasklist, updateTasklist] = useState(tasks)
+  const [maxId, setMaxId ] = useState(0);
+  const [tasks, setTasks] = useState(columns.tasks)
 
   return (
     <div className='light-grey background-height'>
-      <ThemeContext.Provider value={{ columns, setColumns, tasks, setTasks }}>
+      <ThemeContext.Provider value={{ columns, setColumns, maxId, setMaxId, tasks, setTasks }}>
         <Header />
         {JSON.stringify(columns)}
         <Columns />
