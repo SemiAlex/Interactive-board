@@ -22,18 +22,6 @@
   background: rgb(247, 247, 247);
 }
 
-.column-width {
-  width: 15rem;
-}
-
-.column-height {
-  min-height: 30rem;
-}
-
-.background-height {
-  height: 100vh;
-}
-
 .transparent {
   background: none;
 }
@@ -46,4 +34,43 @@
   list-style-type: none;
   margin: 0;
   padding: 0
+}
+
+.pointer:hover {
+  cursor: pointer
+}
+
+.link-none {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link-none:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.full-screen {
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.header {
+  position: absolute;
+  width:100%
+}
+
+.header-placeholder {
+  padding-top: 3rem
+}
+
+.column {
+  flex: 0 0 15rem;
+}
+
+.column-height {
+  min-height: 30rem;
 }

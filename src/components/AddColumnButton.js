@@ -5,7 +5,7 @@ function AddColumnButton() {
     const {columns, setColumns} = useContext(ThemeContext);
 
     const addColumn = () => {
-        setColumns([...columns, {id: columns.length, header: 'New Column'}])
+        setColumns([...columns, {id: columns.length, header: 'New Column', tasks: []}])
     };
 
     return <div>
