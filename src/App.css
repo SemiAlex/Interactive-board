@@ -41,3 +41,9 @@
 .title-text {
   font-size: 3.5rem;
 }
+
+.list-none {
+  list-style-type: none;
+  margin: 0;
+  padding: 0
+}
