@@ -1,8 +1,7 @@
 import { useContext, useRef } from "react";
 import ThemeContext from "../context/ThemeContext";
 
-function TaskDescription({ task }) {
-    const { columns, setColumns } = useContext(ThemeContext);
+function TaskDescription({ task, columns, setColumns }) {
 
     const inputRef = useRef(null);
 

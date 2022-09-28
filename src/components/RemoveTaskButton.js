@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
 
-function RemoveTaskButton({ task, column }) {
-    const { columns, setColumns, maxId, setMaxId } = useContext(ThemeContext);
+function RemoveTaskButton({ task, column, columns, setColumns }) {
+    const { maxId, setMaxId } = useContext(ThemeContext);
 
     const removeTask = id => {
         setColumns(columns.map(column => ({...column, tasks: (column.tasks.filter(task => !(task.id === id)).map(task => ({...task, id: task.id > id ? task.id-1 : task.id})))})))

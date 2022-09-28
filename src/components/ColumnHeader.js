@@ -2,8 +2,7 @@ import RemoveColumnButton from "./RemoveColumnButton";
 import { useContext, useRef } from "react";
 import ThemeContext from "../context/ThemeContext";
 
-function ColumnHeader({ column }) {
-    const { columns, setColumns } = useContext(ThemeContext);
+function ColumnHeader({ column, columns, setColumns }) {
 
     const inputRef = useRef(null);
 

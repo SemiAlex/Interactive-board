@@ -1,8 +1,7 @@
 import { useContext, useRef } from "react";
 import ThemeContext from "../context/ThemeContext";
 
-function TaskHeader({ task, column }) {
-    const { columns, setColumns } = useContext(ThemeContext);
+function TaskHeader({ task, columns, setColumns }) {
 
     const handleDrag = event => event.preventDefault();
 
