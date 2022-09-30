@@ -1,11 +1,10 @@
-import { useContext, useState } from 'react';
-import ThemeContext from '../context/ThemeContext';
+import { useState } from 'react';
 
-function AddTaskButton({ column, columns, setColumns }) {
+function AddTaskButton({ column, columns, setColumns, maxId, setMaxId }) {
+
     const [isActive, setActive] = useState(false);
     const [header, setHeader] = useState('');
     const [description, setDescription] = useState('');
-    const { maxId, setMaxId } = useContext(ThemeContext);
 
     const handleSubmit = event => {
         event.preventDefault();

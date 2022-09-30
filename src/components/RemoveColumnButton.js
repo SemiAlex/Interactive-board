@@ -1,6 +1,3 @@
-import { useContext } from "react";
-import ThemeContext from "../context/ThemeContext";
-
 function RemoveColumnButton({ column, columns, setColumns }) {
 
     const removeColumn = id => {

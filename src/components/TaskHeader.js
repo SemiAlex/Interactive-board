@@ -11,7 +11,7 @@ function TaskHeader({ task, columns, setColumns }) {
         setColumns(columns.map(column => ({...column, tasks: (column.tasks.map(task => ({...task, header: task.id === id ? inputRef.current.value : task.header})))})));
     }
 
-    return <input className="transparent border-0 w-75 text-white font-weight-bold text-wrap text-break" 
+    return <input className="transparent border-0 w-75 text-white font-weight-bold text-wrap text-break hover-shadow" 
     style={{fontWeight: "bold"}} 
     type="text" maxLength="50" 
     ref={inputRef}

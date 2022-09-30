@@ -1,6 +1,5 @@
 import RemoveColumnButton from "./RemoveColumnButton";
-import { useContext, useRef } from "react";
-import ThemeContext from "../context/ThemeContext";
+import { useRef } from "react";
 
 function ColumnHeader({ column, columns, setColumns }) {
 
@@ -14,7 +13,8 @@ function ColumnHeader({ column, columns, setColumns }) {
         <input className="transparent border-0 w-100" type="text" maxLength="50" autoComplete="off" ref={inputRef}
         value={`${column.header}`}
         onChange={() => saveData(column.id)}/>
-        <RemoveColumnButton column={column} />
+        <RemoveColumnButton column={column} columns={columns} setColumns={setColumns} />
+        {JSON.stringify(column.id)}
         </div>
 }
 

@@ -60,7 +60,9 @@
 
 .header {
   position: absolute;
-  width:100%
+  width: 100vw;
+  background: rgb(61, 90, 128);
+  color: white;
 }
 
 .header-placeholder {
@@ -73,4 +75,12 @@
 
 .column-height {
   min-height: 30rem;
+}
+
+.hover-shadow {
+  top: 100%;
+  bottom: 100%
+}
+.hover-shadow:hover {
+  background: rgba(0, 0, 0, 0.1);
 }

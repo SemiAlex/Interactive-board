@@ -1,8 +1,10 @@
-import { useState, useRef, useContext } from "react"
+import { useRef, useContext } from "react"
 import ThemeContext from "../context/ThemeContext"
 
 function AddBoard () {
-    const {boards, setBoards} = useContext(ThemeContext);
+
+    const { boards, setBoards, maxBoardId, setMaxBoardId } = useContext(ThemeContext);
+
     const inputRef = useRef(null);
 
     const handleSubmit = event => {
@@ -11,7 +13,11 @@ function AddBoard () {
 
     const add = () => {
         const boardTitle = inputRef.current.value;
-        setBoards([...boards, {id: boards.length, title: boardTitle}])
+        if (boardTitle) {
+            setBoards([...boards, { id: maxBoardId, title: boardTitle }])
+            setMaxBoardId(maxBoardId+1)
+            inputRef.current.value = ''
+        }
     }
 
     return <form onSubmit={handleSubmit}>

@@ -6,9 +6,10 @@ import Task from './Task'
 import AddTaskButton from './AddTaskButton'
 import ColumnHeader from './ColumnHeader'
 
-function Board({board}) {
+function Board({ board }) {
+    
     const [columns, setColumns] = useState(() => {
-        const col = JSON.parse(localStorage.getItem(`${board.title}`));
+        const col = JSON.parse(localStorage.getItem(`board-${board.title}-${board.id}`));
         if (col) {
             return col
         } else {
@@ -16,9 +17,22 @@ function Board({board}) {
         }
     });
 
+    const [maxId, setMaxId ] = useState(() => {
+        const maxtask = JSON.parse(localStorage.getItem(`maxtask-${board.title}-${board.id}`));
+        if (maxtask > 0) {
+            return maxtask
+        } else {
+            return 0
+        }
+    });
+
     useEffect(() => {
-        localStorage.setItem(`${board.title}`, JSON.stringify(columns));
+        localStorage.setItem(`board-${board.title}-${board.id}`, JSON.stringify(columns));
       }, [columns]);
+
+      useEffect(() => {
+        localStorage.setItem(`maxtask-${board.title}-${board.id}`, JSON.stringify(maxId));
+      }, [maxId]);
 
     const onDragEnd = (result, columns, setColumns) => {
         if (!result.destination) return;
@@ -72,7 +86,7 @@ function Board({board}) {
                             </div>
                         )}
                     </Droppable>
-                    <AddTaskButton column={column} tasks={column.tasks} columns={columns} setColumns={setColumns} />
+                    <AddTaskButton column={column} tasks={column.tasks} columns={columns} setColumns={setColumns} maxId={maxId} setMaxId={setMaxId} />
                 </div>
             </div>)}
         </DragDropContext>
