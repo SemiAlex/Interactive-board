@@ -3,13 +3,13 @@
   color: white;
 }
 
-.light-purple {
-  background: rgba(98, 0, 151, 1);
+.light-red {
+  background: rgba(158, 42, 43);
   color: white;
 }
 
 .yellow {
-  background: rgba(253, 186, 49, 1);
+  background: rgba(224, 159, 62);
   color: rgb(0, 0, 0);
 }
 
@@ -61,7 +61,7 @@
 .header {
   position: absolute;
   width: 100vw;
-  background: rgb(61, 90, 128);
+  background: rgb(51, 92, 103);
   color: white;
 }
 
@@ -78,9 +78,10 @@
 }
 
 .hover-shadow {
-  top: 100%;
-  bottom: 100%
+  top: 0;
+  bottom: 0;
 }
 .hover-shadow:hover {
   background: rgba(0, 0, 0, 0.1);
 }
+
