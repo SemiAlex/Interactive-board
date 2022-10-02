@@ -65,11 +65,11 @@ function Board({ board }) {
 
     return <div className="ms-5 header-placeholder d-flex justify-content-start align-items-start">
         <DragDropContext onDragEnd={result => onDragEnd(result, columns, setColumns)}>
-            {columns.map(column => <div className="column m-4 mt-5" key={column.id} >
-                <div className='yellow p-2 text-center rounded-top border border-bottom-0 border-secondary'>
+            {columns.map(column => <div className="column m-4" key={column.id} >
+                <div className='yellow p-2 text-center'>
                     <h4><ColumnHeader column={column} columns={columns} setColumns={setColumns} /></h4>
                 </div>
-                <div className='grey py-1 px-4 rounded-bottom border border-top-0 border-secondary'>
+                <div className='grey py-1 px-4'>
                     <Droppable droppableId={`${column.id}`} key={column.id}>
                         {(provided) => (
                             <div {...provided.droppableProps} ref={provided.innerRef}>

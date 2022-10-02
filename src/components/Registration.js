@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import ThemeContext from '../context/ThemeContext';
 
 function Registration() {
+    
     const { profile, setProfile } = useContext(ThemeContext)
     const emailRef = useRef(null);
     const passwordRef = useRef(null);

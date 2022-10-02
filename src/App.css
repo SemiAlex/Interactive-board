@@ -9,7 +9,7 @@
 }
 
 .yellow {
-  background: rgba(224, 159, 62);
+  background: rgb(255, 179, 65);
   color: rgb(0, 0, 0);
 }
 
@@ -51,22 +51,22 @@
 }
 
 .full-screen {
-  position:absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
 }
 
 .header {
-  position: absolute;
-  width: 100vw;
-  background: rgb(51, 92, 103);
+  overflow: hidden;
+  width: 100%;
+  background: rgb(51, 92, 103) repeat-x;
   color: white;
 }
 
 .header-placeholder {
-  padding-top: 5rem
+  padding-top: 5rem;
+ 
 }
 
 .column {
@@ -85,3 +85,37 @@
   background: rgba(0, 0, 0, 0.1);
 }
 
+.header-text {
+  font-size: 2rem;
+}
+
+.header-margin {
+  margin-left: 2rem;
+}
+
+
+
+@media (max-width: 768px) {
+  .header-text {
+    font-size: 2rem;
+  }
+  .header-margin {
+    margin-left: 0;
+  }
+  .header {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-text {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .header-text {
+    font-size: 1.5rem;
+  }
+
+}

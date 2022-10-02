@@ -1,22 +1,28 @@
 import { Link } from 'react-router-dom';
 
 function Header() {
-    return <div className='d-flex justify-content-start align-items-end header'>
-        <div className='hover-shadow'>
-            <Link to="" className='link-none display-4 mx-4'>KanBoard</Link>
-        </div>
-        <div className='hover-shadow'>
-            <Link to="" className='link-none display-6 mx-4 h-100'>Home</Link>
-        </div>
-        <div className='hover-shadow'>
-            <Link to="boards" className='link-none display-6 mx-4'>Boards</Link>
-        </div>
-        <div className='hover-shadow'>
-            <Link to="registration" className='link-none display-6 mx-4'>Profile</Link>
-        </div>
-        <div className='hover-shadow'>
-            <Link to="about" className='link-none display-6 mx-4'>About</Link>
-        </div>
+
+    return <div className='d-flex align-items-end header'>
+        <Link to="" className='link-none'>
+            <div className='hover-shadow p-2 header-text'>
+                <span className='header-margin'>Home</span>
+            </div>
+        </Link>
+        <Link to="boards" className='link-none'>
+            <div className='hover-shadow p-2 header-text'>
+                <span className='header-margin'>Boards</span>
+            </div>
+        </Link>
+        <Link to="registration" className='link-none'>
+            <div className='hover-shadow p-2 header-text'>
+                <span className='header-margin'>Profile</span>
+            </div>
+        </Link>
+        <Link to="about" className='link-none'>
+            <div className='hover-shadow p-2 header-text'>
+                <span className='header-margin'>About</span>
+            </div>
+        </Link>
     </div>;
 }
 

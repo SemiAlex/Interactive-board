@@ -36,13 +36,13 @@ function AddTaskButton({ column, columns, setColumns, maxId, setMaxId }) {
     };
     
     return !isActive ? 
-    <button className="border-0 transparent grey" onClick={() => handleClick()}><span className="h4">+</span> Add Task</button> : 
-    <div className="border border-dark rounded p-1 mt-2">
+    <button className="border-0 transparent hover-shadow" onClick={() => handleClick()}><span className="h4">+</span> Add Task</button> : 
+    <div className="p-1 mt-2">
             <form className='mt-2 text-center' onSubmit={handleSubmit}>
-                <input type="text" className='border-0 border-bottom rounded-top w-100' placeholder="Provide title" onChange={getHeader} />
-                <input type="text" className='border-0 border-top rounded-bottom w-100' placeholder="Description..." onChange={getDescription} />
+                <input type="text" className='border-0 w-100' placeholder="Provide title" onChange={getHeader} />
+                <input type="text" className='border-0 w-100' placeholder="Description..." onChange={getDescription} />
                 <div className='d-flex justify-content-evenly align-items-center'>
-                    <input type="submit" className='border-0 light-purple mt-2 rounded' onClick={() => addTask(column.id)} />
+                    <input type="submit" className='border-0 light-red mt-2' onClick={() => addTask(column.id)} />
                     <button className="border-0 transparent h6" onClick={() => handleClick()}>X</button> 
                 </div>
             </form>

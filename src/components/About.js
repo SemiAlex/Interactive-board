@@ -1,6 +1,6 @@
 function About() {
     
-    return <div className="ms-5 header-placeholder"><p>Created in 2022</p></div>
+    return <div className="ms-5 header-placeholder container"><p>Created by Alexander Grygoriev, 2022</p></div>
 }
 
 export default About

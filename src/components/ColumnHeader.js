@@ -10,12 +10,11 @@ function ColumnHeader({ column, columns, setColumns }) {
     }
 
     return <div className="d-flex justify-content-between align-items-center">
-        <input className="transparent border-0 w-100" type="text" maxLength="50" autoComplete="off" ref={inputRef}
-        value={`${column.header}`}
-        onChange={() => saveData(column.id)}/>
+        <input className="transparent border-0 w-100 hover-shadow h4" type="text" maxLength="50" autoComplete="off" ref={inputRef}
+            value={`${column.header}`}
+            onChange={() => saveData(column.id)} />
         <RemoveColumnButton column={column} columns={columns} setColumns={setColumns} />
-        {JSON.stringify(column.id)}
-        </div>
+    </div>
 }
 
 export default ColumnHeader

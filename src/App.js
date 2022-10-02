@@ -10,9 +10,12 @@ import Registration from './components/Registration';
 import About from './components/About';
 
 function App() {
+
   const [maxBoardId, setMaxBoardId] = useState(0);
   const [boards, setBoards] = useState([]);
   const [profile, setProfile] = useState({email: '', password: ''});
+
+  document.body.style = 'background: rgb(210, 216, 189);';
 
   useEffect(() => {
     const acc = JSON.parse(localStorage.getItem('profile'));
