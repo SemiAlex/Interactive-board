@@ -26,7 +26,7 @@ function AddTaskButton({ column, columns, setColumns, maxId, setMaxId }) {
         setColumns(columns.map(column => column.id === id ?
             ({
                 ...column, tasks:
-                    [...column.tasks, { id: maxId, header: header.length ? `${header}` : 'New Task', description: `${description}` }]
+                    [...column.tasks, { id: maxId, header: header.length ? `${header}` : 'New Task', description: `${description}`, color: 'task-grey' }]
             }) :
             ({ ...column })));
         setMaxId(maxId + 1)
@@ -34,20 +34,18 @@ function AddTaskButton({ column, columns, setColumns, maxId, setMaxId }) {
         setHeader('');
         setDescription('');
     };
-    
-    return !isActive ? 
-    <button className="border-0 transparent hover-shadow" onClick={() => handleClick()}><span className="h4">+</span> Add Task</button> : 
-    <div className="p-1 mt-2">
-            <form className='mt-2 text-center' onSubmit={handleSubmit}>
-                <input type="text" className='border-0 w-100' placeholder="Provide title" onChange={getHeader} />
-                <input type="text" className='border-0 w-100' placeholder="Description..." onChange={getDescription} />
-                <div className='d-flex justify-content-evenly align-items-center'>
-                    <input type="submit" className='border-0 light-red mt-2' onClick={() => addTask(column.id)} />
-                    <button className="border-0 transparent h6" onClick={() => handleClick()}>X</button> 
-                </div>
-            </form>
-        </div>
-    };
+
+    return !isActive ?
+        <button className="border-0 transparent hover-shadow my-2" onClick={() => handleClick()}><span className="h4">+</span> Add Task</button> :
+        <form className='mt-2 text-center p-1 mt-2' onSubmit={handleSubmit} >
+            <input type="text" className='border-0 w-100' placeholder="Provide title" onChange={getHeader} />
+            <input type="text" className='border-0 w-100' placeholder="Description..." onChange={getDescription} />
+            <div className='d-flex justify-content-between align-items-end'>
+                <input type="submit" className='border-0 yellow mt-2' onClick={() => addTask(column.id)} />
+                <button className="border-0 transparent" onClick={() => handleClick()}><span className='h6'>X</span></button>
+            </div>
+        </form>
+};
 
 
 export default AddTaskButton

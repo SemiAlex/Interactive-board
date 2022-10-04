@@ -4,26 +4,72 @@
 }
 
 .light-red {
-  background: rgba(158, 42, 43);
+  background: rgb(219, 72, 75);
   color: white;
 }
 
 .yellow {
-  background: rgb(255, 179, 65);
+  background: rgb(255, 205, 68);
   color: rgb(0, 0, 0);
 }
 
-.grey {
-  background: rgb(228, 228, 228);
-  color: black;
-}
-
 .light-grey {
-  background: rgb(247, 247, 247);
+  background: rgb(233, 231, 231);
 }
 
 .transparent {
   background: none;
+}
+
+.task-grey {
+  background: rgb(184, 184, 184);
+  color: black;
+}
+
+.task-red {
+  background: rgb(219, 72, 75);
+  color: rgb(255, 214, 214);
+}
+
+.task-yellow {
+  background: rgb(255, 205, 68);
+  color: rgb(94, 53, 0);
+}
+
+.task-green {
+  background: rgb(95, 204, 62);
+  color: rgb(6, 59, 18);
+}
+
+.task-blue {
+  background: rgb(98, 133, 247);
+  color: rgb(38, 12, 131);
+}
+
+.color-square {
+  width: 2rem;
+  height: 2rem;
+}
+
+.background-full {
+  position: absolute;
+  height: 90%;
+  width: 100%;
+}
+
+.overlay-style {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.non-resizable {
+  resize: none; 
 }
 
 .title-text {
@@ -33,7 +79,7 @@
 .list-none {
   list-style-type: none;
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 .pointer:hover {
@@ -50,39 +96,39 @@
   text-decoration: none;
 }
 
-.full-screen {
-  position: absolute;
-  height: 100%;
+.column {
+  flex: 0 0 15rem;
+}
+
+.hover-shadow:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.task-edit {
+  position: fixed;
+  min-width: 24rem;
+  width: 50%;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 3;
+}
+
+.footer {
+  position: fixed;
   width: 100%;
-  overflow-y: hidden;
+  bottom: 0;
 }
 
 .header {
   overflow: hidden;
   width: 100%;
-  background: rgb(51, 92, 103) repeat-x;
+  background: rgb(18, 73, 88) repeat-x;
   color: white;
 }
 
 .header-placeholder {
-  padding-top: 5rem;
- 
-}
-
-.column {
-  flex: 0 0 15rem;
-}
-
-.column-height {
-  min-height: 30rem;
-}
-
-.hover-shadow {
-  top: 0;
-  bottom: 0;
-}
-.hover-shadow:hover {
-  background: rgba(0, 0, 0, 0.1);
+  padding-top: 2rem;
 }
 
 .header-text {
@@ -90,9 +136,9 @@
 }
 
 .header-margin {
-  margin-left: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
-
 
 
 @media (max-width: 768px) {
@@ -101,6 +147,7 @@
   }
   .header-margin {
     margin-left: 0;
+    margin-right: 0;
   }
   .header {
     justify-content: space-between;

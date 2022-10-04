@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function Header() {
 
-    return <div className='d-flex align-items-end header'>
+    return <div className='d-flex align-items-end header px-3'>
         <Link to="" className='link-none'>
             <div className='hover-shadow p-2 header-text'>
                 <span className='header-margin'>Home</span>
