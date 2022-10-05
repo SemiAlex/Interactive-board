@@ -1,20 +1,10 @@
-.purple {
-  background: rgba(55, 0, 117, 1);
+.blue {
+  background: rgb(159, 179, 194);
   color: white;
-}
-
-.light-red {
-  background: rgb(219, 72, 75);
-  color: white;
-}
-
-.yellow {
-  background: rgb(255, 205, 68);
-  color: rgb(0, 0, 0);
 }
 
 .light-grey {
-  background: rgb(233, 231, 231);
+  background: rgb(215, 230, 241);
 }
 
 .transparent {
@@ -46,15 +36,25 @@
   color: rgb(38, 12, 131);
 }
 
+.board-style {
+  -webkit-border-radius: 155px;
+  -webkit-border-bottom-right-radius: 15px;
+  -moz-border-radius: 155px;
+  -moz-border-radius-bottomright: 15px;
+  border-radius: 155px;
+  border-bottom-right-radius: 15px;
+}
+
 .color-square {
   width: 2rem;
   height: 2rem;
 }
 
-.background-full {
+.background-style {
   position: absolute;
-  height: 90%;
+  height: 100%;
   width: 100%;
+
 }
 
 .overlay-style {
@@ -100,6 +100,10 @@
   flex: 0 0 15rem;
 }
 
+.thick {
+  font-weight: bold;
+}
+
 .hover-shadow:hover {
   background: rgba(0, 0, 0, 0.1);
 }
@@ -123,8 +127,14 @@
 .header {
   overflow: hidden;
   width: 100%;
-  background: rgb(18, 73, 88) repeat-x;
-  color: white;
+}
+
+.placeholder {
+  height: 35%;
+}
+
+.placeholder-profile {
+  height: 25%;
 }
 
 .header-placeholder {

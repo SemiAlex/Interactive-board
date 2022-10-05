@@ -1,11 +1,10 @@
 import '../App.css'
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect } from "react"
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import AddColumnButton from "./AddColumnButton"
 import Task from './Task'
 import AddTaskButton from './AddTaskButton'
 import ColumnHeader from './ColumnHeader'
-import ThemeContext from '../context/ThemeContext'
 
 function Board({ board }) {
     
@@ -67,7 +66,7 @@ function Board({ board }) {
     return <div className="ms-5 header-placeholder d-flex justify-content-start align-items-start">
         <DragDropContext onDragEnd={result => onDragEnd(result, columns, setColumns)}>
             {columns.map(column => <div className="column mx-4" key={column.id} >
-                <div className='yellow p-2 text-center'>
+                <div className='blue p-2 text-center rounded-top'>
                     <h4><ColumnHeader column={column} columns={columns} setColumns={setColumns} /></h4>
                 </div>
                 <div className='light-grey py-1 px-4'>
@@ -79,9 +78,9 @@ function Board({ board }) {
                                         {(provided) => (
                                             <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
                                                 <Task column={column}
-                                                task={task}
-                                                columns={columns}
-                                                setColumns={setColumns}/>
+                                                    task={task}
+                                                    columns={columns}
+                                                    setColumns={setColumns} />
                                             </div>
                                         )}
                                     </Draggable>)
@@ -91,10 +90,10 @@ function Board({ board }) {
                         )}
                     </Droppable>
                     <AddTaskButton column={column}
-                    tasks={column.tasks}
-                    columns={columns}
-                    setColumns={setColumns} maxId={maxId}
-                    setMaxId={setMaxId} />
+                        tasks={column.tasks}
+                        columns={columns}
+                        setColumns={setColumns} maxId={maxId}
+                        setMaxId={setMaxId} />
                 </div>
             </div>)}
         </DragDropContext>

@@ -1,3 +1,5 @@
+import '../App.css';
+
 function RemoveTaskButton({ task, columns, setColumns, maxId, setMaxId }) {
     
     const removeTask = id => {
@@ -8,7 +10,7 @@ function RemoveTaskButton({ task, columns, setColumns, maxId, setMaxId }) {
         setMaxId(maxId-1)
     };
 
-    return <span className="border-0 transparent pointer" onClick={() => removeTask(task.id)}>X</span>
+    return <span className="border-0 transparent pointer thick" onClick={() => removeTask(task.id)}>X</span>
 }
 
 export default RemoveTaskButton

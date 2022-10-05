@@ -41,7 +41,7 @@ function AddTaskButton({ column, columns, setColumns, maxId, setMaxId }) {
             <input type="text" className='border-0 w-100' placeholder="Provide title" onChange={getHeader} />
             <input type="text" className='border-0 w-100' placeholder="Description..." onChange={getDescription} />
             <div className='d-flex justify-content-between align-items-end'>
-                <input type="submit" className='border-0 yellow mt-2' onClick={() => addTask(column.id)} />
+                <input type="submit" className='border-0 rounded blue mt-2' onClick={() => addTask(column.id)} />
                 <button className="border-0 transparent" onClick={() => handleClick()}><span className='h6'>X</span></button>
             </div>
         </form>

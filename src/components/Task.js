@@ -8,12 +8,20 @@ function Task({ task, column, columns, setColumns, maxId, setMaxId }) {
 
     const [taskEdit, setTaskEdit] = useState(false)
 
-    return <div isDragDisabled={true}>
-        <div className={`d-flex justify-content-between align-items-center p-1 mt-2 text-wrap text-break ${task.color}`}>
-            <h6>{task.header}</h6>
+    return <div>
+        <div className={`d-flex justify-content-between align-items-center p-1 mt-2 text-wrap text-break
+        ${task.description ? 'rounded-top' : 'rounded'}
+        ${task.color}`}>
+            <span className='thick'>{task.header}</span>
             <div className='d-flex justify-content-between align-items-center '>
                 <span className="text-nowrap pointer" onClick={() => setTaskEdit(true)}>edit</span>
-                <RemoveTaskButton task={task} column={column} columns={columns} setColumns={setColumns} maxId={maxId} setMaxId={setMaxId} />
+                <RemoveTaskButton
+                task={task}
+                column={column}
+                columns={columns}
+                setColumns={setColumns}
+                maxId={maxId}
+                setMaxId={setMaxId} />
             </div>
         </div>
         {task.description ? <div className="bg-white p-1 text-wrap text-break">

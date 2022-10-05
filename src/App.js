@@ -16,7 +16,10 @@ function App() {
   const [boards, setBoards] = useState([]);
   const [profile, setProfile] = useState({email: '', password: ''});
 
-  document.body.style = 'background: rgb(255, 254, 224);';
+  document.body.style = `background-image: url(https://images.unsplash.com/photo-1596367407372-96cb88503db6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;`;
 
   useEffect(() => {
     const acc = JSON.parse(localStorage.getItem('profile'));
@@ -26,7 +29,7 @@ function App() {
   }, []);
 
   return (
-      <div className='background-full'>
+      <div className={'background-style'}>
         <ThemeContext.Provider value={{ boards, setBoards, profile, setProfile, maxBoardId, setMaxBoardId }}>
           <Header />
           <Routes>
@@ -36,7 +39,6 @@ function App() {
             <Route path="/registration" element={<Registration />} />
             <Route path="/about" element={<About />} />
           </Routes>
-          <Footer />
         </ThemeContext.Provider>
       </div>
   );

@@ -20,9 +20,9 @@ function AddBoard () {
         }
     }
 
-    return <form onSubmit={handleSubmit} className="border">
-        <input type="text" className="border-0 p-2" ref={inputRef} />
-        <button type="submit" className="light-red border-0 p-2" onClick={() => add()}>Submit</button>
+    return <form onSubmit={handleSubmit}>
+        <input type="text" className="border border-end-0 p-2" ref={inputRef} maxLength={25} />
+        <button type="submit" className="blue border border-start-0 p-2" onClick={() => add()}>Submit</button>
     </form>
 }
 
