@@ -30,7 +30,7 @@ function Registration() {
             </div> :
             <div className='d-flex justify-content-center align-items-center'>
                 <div>
-                    <Form onSubmit={handleSubmit} className="">
+                    <Form onSubmit={handleSubmit} >
                         <Form.Group className="mb-3" controlId="nameForm">
                             <Form.Label>Name</Form.Label>
                             <Form.Control type="name" placeholder="Enter your name" ref={nameRef} />
@@ -45,7 +45,7 @@ function Registration() {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="passwordForm">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" ref={passwordRef} />
+                            <Form.Control type="password" placeholder="Enter password" ref={passwordRef} />
                         </Form.Group>
                         <button className='blue border-0 rounded thick px-3 py-1' type="submit" onClick={() => saveProfile()}>
                             Submit

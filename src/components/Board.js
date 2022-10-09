@@ -67,7 +67,9 @@ function Board({ board }) {
         <DragDropContext onDragEnd={result => onDragEnd(result, columns, setColumns)}>
             {columns.map(column => <div className="column mx-4" key={column.id} >
                 <div className='blue p-2 text-center rounded-top'>
-                    <h4><ColumnHeader column={column} columns={columns} setColumns={setColumns} /></h4>
+                    <h4>
+                        <ColumnHeader column={column} columns={columns} setColumns={setColumns} />
+                    </h4>
                 </div>
                 <div className='light-grey py-1 px-4'>
                     <Droppable droppableId={`${column.id}`} key={column.id}>

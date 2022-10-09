@@ -1,3 +1,10 @@
+.background-style {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
 .blue {
   background: rgb(159, 179, 194);
   color: white;
@@ -48,13 +55,6 @@
 .color-square {
   width: 2rem;
   height: 2rem;
-}
-
-.background-style {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-
 }
 
 .overlay-style {
@@ -148,6 +148,10 @@
 .header-margin {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.z1 {
+  z-index: 1;
 }
 
 

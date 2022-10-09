@@ -28,8 +28,7 @@ function Boards() {
 
 
     return <>
-        <div className='placeholder' />
-        <div className="d-flex justify-content-center align-items-center w-100 text-center">
+        <div className="d-flex mt-5 justify-content-center align-items-center w-100 text-center">
             {profile.email ? <div>
                 {boards.map(board => <div className="m-2 p-2 hover-shadow d-flex justify-content-between align-items-center blue board-style" key={board.id}>
                     <Link to={`/board-${board.title}-${board.id}`} className='link-none' >

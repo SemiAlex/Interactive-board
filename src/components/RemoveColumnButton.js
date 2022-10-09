@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+
 function RemoveColumnButton({ column, columns, setColumns }) {
 
     const removeColumn = id => {
@@ -5,7 +8,9 @@ function RemoveColumnButton({ column, columns, setColumns }) {
     };
 
     return <div>
-        <button className='border-0 transparent h6' onClick={() => removeColumn(column.id)}>X</button>
+        <button className='border-0 transparent text-white' onClick={() => removeColumn(column.id)}>
+            <FontAwesomeIcon icon={faXmark} />
+        </button>
     </div>
 };
 

@@ -1,5 +1,7 @@
-import { useContext } from "react"
-import ThemeContext from "../context/ThemeContext"
+import { useContext } from "react";
+import ThemeContext from "../context/ThemeContext";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 function RemoveBoard({ id, title }) {
 
@@ -10,7 +12,9 @@ function RemoveBoard({ id, title }) {
         localStorage.removeItem(`${title}${id}`);
     }
 
-    return <button onClick={() => remove()} className="border-0 transparent">X</button>
+    return <button onClick={() => remove()} className="border-0 transparent text-white">
+        <FontAwesomeIcon icon={faXmark} />
+    </button>
 }
 
 export default RemoveBoard

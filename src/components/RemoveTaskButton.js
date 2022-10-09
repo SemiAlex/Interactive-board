@@ -1,4 +1,6 @@
 import '../App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 function RemoveTaskButton({ task, columns, setColumns, maxId, setMaxId }) {
     
@@ -10,7 +12,9 @@ function RemoveTaskButton({ task, columns, setColumns, maxId, setMaxId }) {
         setMaxId(maxId-1)
     };
 
-    return <span className="border-0 transparent pointer thick" onClick={() => removeTask(task.id)}>X</span>
+    return <button className="border-0 transparent pointer thick" onClick={() => removeTask(task.id)}>
+        <FontAwesomeIcon icon={faXmark} />
+    </button>
 }
 
 export default RemoveTaskButton
