@@ -2,10 +2,11 @@ import '../App.css';
 import { useContext, useRef } from 'react';
 import Form from 'react-bootstrap/Form';
 import ThemeContext from '../context/ThemeContext';
+import { Link } from 'react-router-dom';
 
 function Registration() {
     
-    const { profile, setProfile } = useContext(ThemeContext)
+    const { profile, setProfile, boards } = useContext(ThemeContext)
     const nameRef = useRef(null);
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
@@ -24,9 +25,24 @@ function Registration() {
 
     return <>
         <div className='placeholder-profile' />
-        {profile.email ? 
+        {profile.email ?
             <div className='d-flex justify-content-center align-items-center'>
-                <p className='display-6'>Welcome, {`${profile.name}`}</p>
+                <div className='blue p-4 rounded'>
+                    <p className='display-6'>Welcome, {`${profile.name}`}</p>
+                    <p>
+                        You can view your existing boards or create new ones.
+                    </p>
+                    <p>
+                        Try it now.
+                    </p>
+                    <div className='text-center'>
+                        <Link to='../boards' className='h5 link-none text-nowrap'>
+                            <span className='transparent border border-white text-white hover-shadow p-2'>
+                                {`Show your ${boards.length > 1 ? boards.length + ' boards' : 'board'}`}
+                            </span>
+                        </Link>
+                    </div>
+                </div>
             </div> :
             <div className='d-flex justify-content-center align-items-center'>
                 <div>

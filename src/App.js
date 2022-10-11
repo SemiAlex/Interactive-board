@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ThemeContext from './context/ThemeContext';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import Board from './components/Board';
 import Boards from './components/Boards';
 import Home from './components/Home';
